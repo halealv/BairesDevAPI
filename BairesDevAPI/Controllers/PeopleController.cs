@@ -13,8 +13,7 @@ namespace BairesDevAPI.Controllers
         [HttpGet]
         public IEnumerable<People> Get()
         {
-            var jsonFile = this.GetFilePath();
-            var json = System.IO.File.ReadAllText(jsonFile);
+            var json = GetFileContent();
 
             try
             {
@@ -39,8 +38,7 @@ namespace BairesDevAPI.Controllers
         [HttpGet("topclients/{top}")]
         public IActionResult TopClients(int top)
         {
-            var jsonFile = this.GetFilePath();
-            var json = System.IO.File.ReadAllText(jsonFile);
+            var json = GetFileContent();
 
             try
             {
@@ -69,8 +67,7 @@ namespace BairesDevAPI.Controllers
         [HttpGet("clientposition/{personId}")]
         public IActionResult ClientPosition(int personId)
         {
-            var jsonFile = this.GetFilePath();
-            var json = System.IO.File.ReadAllText(jsonFile);
+            var json = GetFileContent();
 
             try
             {
@@ -107,6 +104,14 @@ namespace BairesDevAPI.Controllers
             path = @"C:\repo\people.json";
 
             return path;
+        }
+
+        private string GetFileContent()
+        {
+            var jsonFile = this.GetFilePath();
+            var json = System.IO.File.ReadAllText(jsonFile);
+
+            return json;
         }
     }
 }
