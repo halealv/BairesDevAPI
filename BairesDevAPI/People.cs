@@ -2,13 +2,13 @@
 {
     public class People
     {
-        long PersonId { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string CurrentRole { get; set; }
-        string Country { get; set; }
-        string Industry { get; set; }
-        int NumberOfRecommendations { get; set; }
-        int NumberOfConnections { get; set; }
+        public long PersonId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string CurrentRole { get; set; }
+        public string Country { get; set; }
+        public string Industry { get; set; }
+        public int NumberOfRecommendations { get; set; }
+        public int NumberOfConnections { get; set; }
     }
 }
